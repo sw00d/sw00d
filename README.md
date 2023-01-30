@@ -1,5 +1,15 @@
 ### Hi there 👋
 
+- 🏄‍♂️ San Diego Based Frontend Devloper
+- 👨‍💻 Sr. Frontend Developer for ![CKC](https://ckcollab.com/)
+- 🔭 I’m currently working on 
+
+![Image](https://git-streak-tracker.herokuapp.com/api/markdown_image/sw00d)
+
+
+
+
+
 <!--
 **sw00d/sw00d** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
