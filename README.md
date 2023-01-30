@@ -3,7 +3,7 @@
 ##### 🏄‍♂️ San Diego Based Frontend Devloper
 ##
 ### My Current Project:  [Github Streak Tracker](https://github.com/gibsonbailey/git-streak-tracker)
-
+![Image](https://git-streak-tracker.herokuapp.com/api/markdown_image/sw00d)
 
 
 
