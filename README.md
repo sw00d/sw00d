@@ -1,8 +1,8 @@
-### Hi there 👋
+<!-- ### Hi there 👋
 
 - 🏄‍♂️ San Diego Based Frontend Devloper
 - 👨‍💻 Sr. Frontend Developer for ![CKC](https://ckcollab.com/)
-- 🔭 I’m currently working on 
+- 🔭 I’m currently working on  -->
 
 ![Image](https://git-streak-tracker.herokuapp.com/api/markdown_image/sw00d)
 
