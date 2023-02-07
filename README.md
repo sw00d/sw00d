@@ -7,7 +7,8 @@ Github: [Git Streak Tracker](https://github.com/gibsonbailey/git-streak-tracker)
 <br>
 [Download the iOS App](https://apps.apple.com/us/app/git-streak-tracker/id1663708723)
 <br>
-![Image](https://d3frb2mbny706b.cloudfront.net/sw00d)
+
+<img src="https://d3frb2mbny706b.cloudfront.net/sw00d" height="150">
 
 
 
