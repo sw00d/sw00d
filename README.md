@@ -1,4 +1,4 @@
-<img src="/gradient_header.png" width="140%" height="100px">
+<img src="/gradient_header.png" width="140%" height="80px">
 
 <br>
 <br>
