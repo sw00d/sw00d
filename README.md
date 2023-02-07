@@ -1,3 +1,5 @@
+<img src="/gradient-header.png" width="140%">
+
 ### Hi there! 👋
 ##
 ##### 🏄‍♂️ San Diego Based Frontend Devloper
