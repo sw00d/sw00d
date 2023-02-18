@@ -8,8 +8,8 @@
 
 ### Hi there! 👋
 ##
-<!-- ### 🏄‍♂️ San Diego Based Frontend Devloper -->
-<!-- ## -->
+
+
 ### A recent project:  
 Github: [Git Streak Tracker](https://github.com/gibsonbailey/git-streak-tracker)
 <br>
