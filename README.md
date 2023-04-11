@@ -15,9 +15,6 @@ Github: [Git Streak Tracker](https://github.com/gibsonbailey/git-streak-tracker)
 
 <img src="https://d3frb2mbny706b.cloudfront.net/sw00d" height="150">
 
-
-
-
 <!--
 **sw00d/sw00d** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
