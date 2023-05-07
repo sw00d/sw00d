@@ -5,7 +5,6 @@ import 'tailwindcss/tailwind.css';
 import { useDarkMode } from '@/context/darkModeContext';
 import Layout from '@/components/layout/Layout';
 import { MountainScene } from '@/components/home/MountainScene';
-import Image from 'next/image';
 
 const IndexPage: React.FC = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
@@ -16,6 +15,7 @@ const IndexPage: React.FC = () => {
         <title>Samuel Wood</title>
       </Head>
       <main>
+        
         <div className="bg-white dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl transition">
           <div className="flex items-center justify-between p-4 absolute top-0 left-0 z-20">
             <button
@@ -30,10 +30,8 @@ const IndexPage: React.FC = () => {
             </button>
               {" "} Currently: {!isDarkMode ? 'Light' : 'Dark'}
           </div>
-          <MountainScene>
-            <div className="min-h-screen">
-            </div>
-          </MountainScene>
+          <MountainScene />
+          
         </div>
       </main>
     </div>
