@@ -19,9 +19,7 @@
 ### [Plática](https://www.platica.xyz/)
 **Cross-Language Communication Powered by OpenAI**
 
-
-- Foster understanding and connection across diverse linguistic backgrounds.
-- Experience real-time translation with state-of-the-art accuracy.
+- Experience real-time translation allowing enhanced communication between two people who share different native languages
 - Available now for users to try and communicate globally without constraints.
 
 [Try her out](https://www.platica.xyz/) (not mobile responsive fyi lol)
