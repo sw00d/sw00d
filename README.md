@@ -22,7 +22,7 @@
 - Experience real-time translation allowing enhanced communication between two people who share different native languages
 - Available now for users to try and communicate globally without constraints.
 
-[Try her out](https://www.platica.xyz/) (not mobile responsive fyi 📵)
+[Try her out](https://www.platica.xyz/) (not mobile responsive yet 📵)
 
 ---
 
@@ -49,7 +49,7 @@
 - Swift app built with a friend to encourage users to keep a streak of daily contributions
 - This has gone on my phones homescreen and is checked daily by me 📲
 
-- [Cool web demo](https://git-streak-tracker.herokuapp.com/)
+- [Cool web demo](https://git-streak-tracker.herokuapp.com/) (not mobile responsive 📵)
 - [View the Repository on GitHub](https://github.com/gibsonbailey/git-streak-tracker)
 - [Download the iOS App](https://apps.apple.com/us/app/git-streak-tracker/id1663708723)
 
