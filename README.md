@@ -43,12 +43,13 @@
 
 ---
 
-### Git Streak Tracker
+### [Git Streak Tracker](https://git-streak-tracker.herokuapp.com/)
 **Keep Track of Your GitHub Contributions**
  
-- Swift app built to encourage users to keep a streak of daily contributions
+- Swift app built with a friend to encourage users to keep a streak of daily contributions
 - This has gone on my phones homescreen and is checked daily by me 📲
 
+- [Cool web demo](https://git-streak-tracker.herokuapp.com/)
 - [View the Repository on GitHub](https://github.com/gibsonbailey/git-streak-tracker)
 - [Download the iOS App](https://apps.apple.com/us/app/git-streak-tracker/id1663708723)
 
