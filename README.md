@@ -22,7 +22,7 @@
 - Experience real-time translation allowing enhanced communication between two people who share different native languages
 - Available now for users to try and communicate globally without constraints.
 
-[Try her out](https://www.platica.xyz/) (not mobile responsive fyi lol)
+[Try her out](https://www.platica.xyz/) (not mobile responsive fyi 📵)
 
 ---
 
@@ -31,7 +31,7 @@
 
 - Streamlines maintenance issue management for Property Managers.
 - Integrates with Twilio and OpenAI, facilitating tenants to send repair requests via text.
-- Automates vendor matching and schedules appointments efficiently.
+- Automates vendor matching and schedules appointments efficiently 📅
 
 ---
 
@@ -39,18 +39,18 @@
 **React & Firebase Reporting Tool**
 
 - Tracks profits, market trends, and personalized seller statistics.
-- Serves hundreds of Depop sellers.
+- Serves hundreds of Depop sellers 📈
 
 ---
 
 ### Git Streak Tracker
 **Keep Track of Your GitHub Contributions**
+ 
+- Swift app built to encourage users to keep a streak of daily contributions
+- This has gone on my phones homescreen and is checked daily by me 📲
 
 - [View the Repository on GitHub](https://github.com/gibsonbailey/git-streak-tracker)
 - [Download the iOS App](https://apps.apple.com/us/app/git-streak-tracker/id1663708723)
-
-![Git Streak Tracker](https://d3frb2mbny706b.cloudfront.net/sw00d "Git Streak Tracker")
-
 
 
 <!--
