@@ -6,7 +6,7 @@
 ### Hi there! 👋
 
 ### 🌞  &nbsp; By day I'm the lead frontend developer at [CKC](https://ckcollab.com/) 👈🏻 (oh I built this site too)
-### 🌙  &nbsp; By night I take apps from an idea to a production-ready application
+### 🌙  &nbsp; By night I've been taking things from an idea to a real life application
 
 
 &nbsp;
