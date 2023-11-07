@@ -19,13 +19,12 @@
 ### [Plática](https://www.platica.xyz/)
 **Cross-Language Communication Powered by OpenAI**
 
-Plática breaks down language barriers, enabling seamless conversation between users speaking different languages. Just type in your native language, and Plática will translate your message into the recipient's language in real-time, leveraging OpenAI's advanced language models.
 
 - Foster understanding and connection across diverse linguistic backgrounds.
 - Experience real-time translation with state-of-the-art accuracy.
 - Available now for users to try and communicate globally without constraints.
 
-[Give Plática a try today!](https://www.platica.xyz/) (not responsive fyi lol)
+[Try her out](https://www.platica.xyz/) (not mobile responsive fyi lol)
 
 ---
 
@@ -42,7 +41,7 @@ Plática breaks down language barriers, enabling seamless conversation between u
 **React & Firebase Reporting Tool**
 
 - Tracks profits, market trends, and personalized seller statistics.
-- Serves hundreds of Depop sellers as a passion project.
+- Serves hundreds of Depop sellers.
 
 ---
 
