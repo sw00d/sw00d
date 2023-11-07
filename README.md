@@ -14,7 +14,7 @@
 &nbsp;
 
 
-## Some Recent Projects:
+## Some Personal Projects:
 
 ### [Plática](https://www.platica.xyz/)
 **Cross-Language Communication Powered by OpenAI**
