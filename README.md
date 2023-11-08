@@ -1,68 +1,60 @@
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=70&duration=1&pause=1000&color=D0D0D0&center=true&vCenter=true&repeat=false&width=1000&height=80&lines=Sam+Wood" alt="Typing SVG" />
+  </a>
+</p>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=70&duration=1&pause=1000&color=D0D0D0&center=true&vCenter=true&repeat=false&width=1000&height=80&lines=Sam+Wood" alt="Typing SVG" /></a>
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=26&duration=10000&pause=2200&color=D0D0D0&center=true&vCenter=true&repeat=true&width=1000&height=80&lines=Software+Developer" alt="Typing SVG" />
+  </a>
+</p>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=26&duration=10000&pause=2200&color=D0D0D0&center=true&vCenter=true&repeat=true&width=1000&height=80&lines=Software+Developer" alt="Typing SVG" /></a>
+<h3>Hi there 👋</h3>
 
-### Hi there! 👋
+<h3>🌞 &nbsp; By day I'm the lead frontend developer at <a href="https://ckcollab.com/">CKC</a> 👈🏻 (oh I built this site too)</h3>
+<h3>🌙 &nbsp; By night I've been taking things from an idea to a real-life application</h3>
 
-### 🌞  &nbsp; By day I'm the lead frontend developer at [CKC](https://ckcollab.com/) 👈🏻 (oh I built this site too)
-### 🌙  &nbsp; By night I've been taking things from an idea to a real life application
+<br><br><br>
 
+<h2>Some Personal Projects:</h2>
 
-&nbsp;
-&nbsp;
-&nbsp;
+<h3><a href="https://www.platica.xyz/">Plática</a></h3>
+<b>Cross-Language Communication Powered by OpenAI</b>
+<ul>
+  <li>Experience real-time translation allowing enhanced communication between two people who share different native languages</li>
+  <li>Available now for users to try and communicate globally without constraints.</li>
+</ul>
+<a href="https://www.platica.xyz/">Try her out</a> (not mobile responsive yet 📵)
 
+<hr>
 
-## Some Personal Projects:
+<h3><a href="https://propconnect.io">PropConnect</a></h3>
+<b>Vue3 & Django App for Property Management</b>
+<ul>
+  <li>Streamlines maintenance issue management for Property Managers.</li>
+  <li>Integrates with Twilio and OpenAI, facilitating tenants to send repair requests via text.</li>
+  <li>Automates vendor matching and schedules appointments efficiently 📅</li>
+</ul>
 
-### [Plática](https://www.platica.xyz/)
-**Cross-Language Communication Powered by OpenAI**
+<hr>
 
-- Experience real-time translation allowing enhanced communication between two people who share different native languages
-- Available now for users to try and communicate globally without constraints.
+<h3><a href="https://www.mepopreports.com">Mepop Reporting</a></h3>
+<b>React & Firebase Reporting Tool</b>
+<ul>
+  <li>Tracks profits, market trends, and personalized seller statistics.</li>
+  <li>Serves hundreds of Depop sellers 📈</li>
+</ul>
 
-[Try her out](https://www.platica.xyz/) (not mobile responsive yet 📵)
+<hr>
 
----
+<h3><a href="https://git-streak-tracker.herokuapp.com/">Git Streak Tracker</a></h3>
+<b>Keep Track of Your GitHub Contributions</b>
+<ul>
+  <li>Swift app built with a friend to encourage users to keep a streak of daily contributions</li>
+  <li>This has gone on my phones home screen and is checked daily by me 📲</li>
+</ul>
 
-### [PropConnect](https://propconnect.io)
-**Vue3 & Django App for Property Management**
-
-- Streamlines maintenance issue management for Property Managers.
-- Integrates with Twilio and OpenAI, facilitating tenants to send repair requests via text.
-- Automates vendor matching and schedules appointments efficiently 📅
-
----
-
-### [Mepop Reporting](https://www.mepopreports.com)
-**React & Firebase Reporting Tool**
-
-- Tracks profits, market trends, and personalized seller statistics.
-- Serves hundreds of Depop sellers 📈
-
----
-
-### [Git Streak Tracker](https://git-streak-tracker.herokuapp.com/)
-**Keep Track of Your GitHub Contributions**
- 
-- Swift app built with a friend to encourage users to keep a streak of daily contributions
-- This has gone on my phones homescreen and is checked daily by me 📲
-
-- [Cool web demo](https://git-streak-tracker.herokuapp.com/) (not mobile responsive 📵)
-- [View the Repository on GitHub](https://github.com/gibsonbailey/git-streak-tracker)
-- [Download the iOS App](https://apps.apple.com/us/app/git-streak-tracker/id1663708723)
-
-
-<!--
-**sw00d/sw00d** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
--->
+<a href="https://git-streak-tracker.herokuapp.com/">Cool web demo</a> (not mobile responsive 📵)<br>
+<a href="https://github.com/gibsonbailey/git-streak-tracker">View the Repository on GitHub</a><br>
+<a href="https://apps.apple.com/us/app/git-streak-tracker/id1663708723">Download the iOS App</a>
