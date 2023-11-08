@@ -13,7 +13,7 @@
 <h3>Hi there 👋</h3>
 
 <h3>🌞 &nbsp; By day I'm the lead frontend developer at <a href="https://ckcollab.com/">CKC</a> 👈🏻 (oh I built this site too)</h3>
-<h3>🌙 &nbsp; By night I've been taking things from an idea to a real-life application</h3>
+<h3>🌙 &nbsp; By night I love taking things from an idea to a real-life application</h3>
 
 <br><br><br>
 
