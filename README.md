@@ -36,6 +36,8 @@
   <li>Integrates with Twilio and OpenAI, facilitating tenants to send repair requests via text.</li>
   <li>Automates vendor matching and schedules appointments efficiently 📅</li>
 </ul>
+<a href="https://propconnect.io">Visit Site</a>
+
 
 <hr>
 
@@ -45,6 +47,7 @@
   <li>Tracks profits, market trends, and personalized seller statistics.</li>
   <li>Serves hundreds of Depop sellers 📈</li>
 </ul>
+<a href="https://www.mepopreports.com">Visit Site</a>
 
 <hr>
 
