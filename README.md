@@ -1,4 +1,4 @@
-<h1>Samuel Wood</h1>
+<h1 align="center">Samuel Wood</h1>
 
 <p align="center">
   <a href="https://git.io/typing-svg">
