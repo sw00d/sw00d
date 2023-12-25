@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=70&duration=1&pause=1000&color=D0D0D0&center=true&vCenter=true&repeat=false&width=1000&height=80&lines=Sam+Wood" alt="Typing SVG" />
-  </a>
-</p>
+<h1>Samuel Wood</h1>
 
 <p align="center">
   <a href="https://git.io/typing-svg">
