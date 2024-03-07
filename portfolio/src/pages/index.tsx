@@ -1,48 +1,31 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
-import 'tailwindcss/tailwind.css';
-import { useDarkMode } from '@/context/darkModeContext';
-import Layout from '@/components/layout/Layout';
-import { MountainScene } from '@/components/home/MountainScene';
+import Head from 'next/head'
+import HomePageComponent from '@/components/HomePage'
+import clsx from 'clsx'
 
-const IndexPage: React.FC = () => {
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
-
+export default function Home() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Samuel Wood</title>
+        <title>Sam Wood - FullStack Engineer</title>
+        <meta name="description" content="Hi I'm Sam! I build things!" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                document.documentElement.classList.add('dark');
+            `,
+          }}
+        />
       </Head>
-      <main>
-        
-        <div className="bg-white dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl transition">
-          <div className="flex items-center justify-between p-4 absolute top-0 left-0 z-20">
-            <button
-              onClick={toggleDarkMode}
-              className="rounded-lg border border-gray-300 dark:border-gray-600  p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              {isDarkMode ? (
-                <SunIcon className="w-5 h-5 text-white" />
-              ) : (
-                <MoonIcon className="w-5 h-5 text-gray-600" />
-              )}
-            </button>
-              {" "} Currently: {!isDarkMode ? 'Light' : 'Dark'}
-          </div>
-          <MountainScene />
-          
-        </div>
+      <main
+        className={clsx(
+          'min-h-[100vh] px-4 py-8 md:py-[5rem] flex justify-center flex-col items-center',
+          'bg-lightBg text-darkBg dark:bg-darkBg dark:text-lightBg transition-colors duration-300'
+        )}
+      >
+        <HomePageComponent />
       </main>
-    </div>
-  );
-};
-
-
-export default function Index() {
-  return (
-    <Layout>
-      <IndexPage />
-    </Layout>
-  );
+    </>
+  )
 }
