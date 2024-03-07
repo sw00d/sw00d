@@ -2,8 +2,12 @@ import Head from 'next/head'
 import Script from 'next/script';
 import HomePageComponent from '@/components/HomePage'
 import clsx from 'clsx'
+import styles from '../styles/Home.module.css'
+import { useTheme } from '@/context/themeContext';
 
 export default function Home() {
+  const { theme } = useTheme();
+
   return (
     <>
       <Script strategy="beforeInteractive">
@@ -25,7 +29,15 @@ export default function Home() {
           'bg-lightBg text-darkBg dark:bg-darkBg dark:text-lightBg transition-colors duration-300'
         )}
       >
-        <HomePageComponent />
+        <div
+          className={theme === 'dark' ? styles.darkBgPattern : styles.lightBgPattern}
+        />
+
+        <div
+          className='relative'
+        >
+          <HomePageComponent />
+        </div>
       </main>
     </>
   )

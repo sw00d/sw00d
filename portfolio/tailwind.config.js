@@ -26,7 +26,7 @@ module.exports = {
          * Brand colors, currently only aliased to
          * the default blue colors.
          */
-        darkBg: "#11141f",
+        darkBg: "#121212",
         lightBg: "#ececf3",
       },
     },
