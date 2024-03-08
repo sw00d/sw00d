@@ -49,7 +49,7 @@ export default function Home() {
                 <b className="dark:text-gray-400">Keep Track of Your GitHub Contributions</b>
                 <ul className="list-disc pl-5 my-2 dark:text-gray-200">
                     <li>Swift app built with a friend to encourage users to keep a streak of daily contributions</li>
-                    <li>This has gone on my phone's home screen and is checked daily by me 📲</li>
+                    <li>This has gone on my phone&apos;s home screen and is checked daily by me 📲</li>
                 </ul>
 
                 <a href="https://git-streak-tracker.herokuapp.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">Cool web demo</a> (not mobile responsive 📵)<br />

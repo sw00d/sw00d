@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Script from 'next/script';
 import HomePageComponent from '@/components/HomePage'
 import clsx from 'clsx'
 import styles from '../styles/Home.module.css'
@@ -10,12 +9,6 @@ export default function Home() {
 
   return (
     <>
-      <Script strategy="beforeInteractive">
-        {`
-            document.documentElement.classList.add('dark');
-        `}
-      </Script>
-
       <Head>
         <title>Sam Wood - FullStack Engineer</title>
         <meta name="description" content="Hi I'm Sam! I build things!" />

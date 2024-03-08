@@ -31,9 +31,9 @@ const Header = () => {
     const { toggleTheme } = useTheme();
 
     const [isMouseLeft, setIsMouseLeft] = useState(false);
-    const imageRef = useRef(null); // Reference to the image container
+    const imageRef = useRef<HTMLDivElement>(null); // Reference to the image container
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: MouseEvent) => {
             if (!imageRef.current) return;
 
             const { clientX } = e;
@@ -90,7 +90,7 @@ const Header = () => {
                 <TitleIntro className="hidden md:flex " />
 
                 <motion.div variants={reverseAnimationX} className='mt-2 md:mt-14 flex flex-col gap-4 md:gap-2'>
-                    <h3 className="md:text-xl dark:text-gray-200 hidden md:flex">💻 &nbsp; I'm a Full Stack Engineer. I like building things.</h3>
+                    <h3 className="md:text-xl dark:text-gray-200 hidden md:flex">💻 &nbsp; I&apos;m a Full Stack Engineer. I like building things.</h3>
                     <h3 className="md:text-xl dark:text-gray-200">
                         <button
                             onClick={toggleTheme}
@@ -99,7 +99,7 @@ const Header = () => {
                         >
                             🌞
                         </button>
-                        &nbsp; By day, I'm the lead frontend developer at <a href="https://ckcollab.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">CKC</a> 👈🏻 (oh I built this)
+                        &nbsp; By day, I&apos;m the lead frontend developer at <a href="https://ckcollab.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">CKC</a> 👈🏻 (oh I built this)
                     </h3>
 
                     <h3 className="md:text-xl dark:text-gray-200">
