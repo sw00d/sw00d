@@ -21,6 +21,10 @@ module.exports = {
       serif: ["Merriweather", "serif"],
     },
     extend: {
+      boxShadow: {
+        "custom-light": "0 0px 20px white",
+        "custom-dark": "0 0px 40px black",
+      },
       colors: {
         /**
          * Brand colors, currently only aliased to
