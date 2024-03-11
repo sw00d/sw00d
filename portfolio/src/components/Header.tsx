@@ -80,7 +80,11 @@ const Header = () => {
 
                 <div className='pt-3'>
                     <TitleIntro className="md:hidden" />
-                    <h3 className="dark:text-gray-200 md:hidden">Fullstack Engineer</h3>
+                    <motion.div
+                        variants={animationX}
+                    >
+                        <h3 className="dark:text-gray-200 md:hidden">Fullstack Engineer</h3>
+                    </motion.div>
                 </div>
 
             </div>
@@ -89,9 +93,12 @@ const Header = () => {
 
                 <TitleIntro className="hidden md:flex " />
 
-                <motion.div variants={reverseAnimationX} className='mt-2 md:mt-14 flex flex-col gap-4 md:gap-2'>
+                <motion.div
+                    variants={reverseAnimationX}
+                    className='mt-2 md:mt-14 flex md:flex-col gap-4 md:gap-2'
+                >
                     <h3 className="md:text-xl dark:text-gray-200 hidden md:flex">💻 &nbsp; I&apos;m a Full Stack Engineer. I like building things.</h3>
-                    <h3 className="md:text-xl dark:text-gray-200">
+                    <h3 className="md:text-xl dark:text-gray-200 flex-1">
                         <button
                             onClick={toggleTheme}
                             // scale down on click
@@ -99,10 +106,10 @@ const Header = () => {
                         >
                             🌞
                         </button>
-                        &nbsp; By day, I&apos;m the lead frontend developer at <a href="https://ckcollab.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">CKC</a> 👈🏻 (oh I built this)
+                        &nbsp; By day, I&apos;m the lead frontend developer at <a href="https://ckcollab.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">CKC</a>
                     </h3>
 
-                    <h3 className="md:text-xl dark:text-gray-200">
+                    <h3 className="md:text-xl dark:text-gray-200 flex-1">
                         <button
                             onClick={toggleTheme}
                             // scale down on click
@@ -126,7 +133,7 @@ const TitleIntro = ({ className }: { className: string }) => {
         <h1
             className={clsx(
                 className,
-                "text-3xl",
+                "text-3xl gap-2",
                 "md:text-5xl font-bold dark:text-white flex gap-4"
             )}
         >

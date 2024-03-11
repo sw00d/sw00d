@@ -10,8 +10,8 @@ export default function Home() {
         >
 
             <Header />
-            <motion.div variants={animationY} className='mt-20'>
-
+            <motion.div variants={animationY} className='mt-10 md:mt-20'>
+                <hr className='md:hidden' />
                 <h2 className="text-3xl font-medium my-4 dark:text-gray-300">Some Personal Projects:</h2>
 
                 <h3 className="text-xl font-semibold dark:text-gray-200"><a href="https://www.platica.xyz/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">Plática</a></h3>
