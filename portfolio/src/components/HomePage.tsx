@@ -8,6 +8,58 @@ export default function Home() {
             animate="show"
             transition={{ staggerChildren: 0.125, delayChildren: 1.8 }}
         >
+            {/* <svg width="70" height="95" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170"
+                preserveAspectRatio="xMinYMin meet">
+
+                <line x1="1" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+                <line x1="101" y1="51" x2="101" y2="151" stroke="red" stroke-width="1" />
+                <line x1="201" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+
+                <g transform="translate(140, 20)">
+                    <line x1="0" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                    <line x1="100" y1="100" x2="100" y2="0" stroke="red" stroke-width="1" />
+                    <line x1="200" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                </g>
+
+                <g transform="translate(0, 250)">
+                    <line x1="0" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                    <line x1="100" y1="100" x2="100" y2="0" stroke="red" stroke-width="1" />
+                    <line x1="200" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                </g>
+
+                <g transform="translate(140, 230)">
+                    <line x1="1" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+                    <line x1="101" y1="51" x2="101" y2="151" stroke="red" stroke-width="1" />
+                    <line x1="201" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+                </g>
+            </svg> */}
+
+            {/* <svg width="140" height="95" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 170"
+                preserveAspectRatio="xMinYMin meet">
+
+                <line x1="1" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+                <line x1="101" y1="51" x2="101" y2="151" stroke="red" stroke-width="1" />
+                <line x1="201" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+
+                <g transform="translate(280, 20)">
+                    <line x1="0" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                    <line x1="100" y1="100" x2="100" y2="0" stroke="red" stroke-width="1" />
+                    <line x1="200" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                </g>
+
+                <g transform="translate(0, 250)">
+                    <line x1="0" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                    <line x1="100" y1="100" x2="100" y2="0" stroke="red" stroke-width="1" />
+                    <line x1="200" y1="150" x2="100" y2="100" stroke="red" stroke-width="1" />
+                </g>
+
+                <g transform="translate(280, 230)">
+                    <line x1="1" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+                    <line x1="101" y1="51" x2="101" y2="151" stroke="red" stroke-width="1" />
+                    <line x1="201" y1="1" x2="101" y2="51" stroke="red" stroke-width="1" />
+                </g>
+            </svg> */}
+
 
             <Header />
             <motion.div variants={animationY} className='mt-10 md:mt-20'>

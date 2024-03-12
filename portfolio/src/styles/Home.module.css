@@ -1,5 +1,5 @@
 .darkBgPattern {
-  background: linear-gradient(transparent 40%, #121212), url("../../public/grid_dark.svg") 0 0 repeat;
+  background: linear-gradient(transparent 40%, #121212), url("../../public/pattern_dark.svg") 0 0 repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
 }
 
 .lightBgPattern {
-  background: linear-gradient(transparent 40%, #ececf3), url("../../public/grid_light.svg") 0 0 repeat;
+  background: linear-gradient(transparent 40%, #ececf3), url("../../public/pattern_light.svg") 0 0 repeat;
   position: absolute;
   top: 0;
   left: 0;
