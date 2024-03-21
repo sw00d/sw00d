@@ -53,7 +53,7 @@ const Header = () => {
 
     return (
 
-        <div className='flex gap-4 md:gap-16 flex-col md:flex-row'>
+        <div className='flex gap-4 md:gap-16 flex-col md:flex-row content-wrapper'>
             <div className='flex gap-8'>
 
                 <motion.div

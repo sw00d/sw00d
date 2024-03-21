@@ -27,7 +27,7 @@ export default function Home() {
         />
 
         <div
-          className='relative'
+          className='relative w-full' // this is for the background pattern
         >
           <HomePageComponent />
         </div>

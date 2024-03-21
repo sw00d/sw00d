@@ -31,7 +31,10 @@ module.exports = {
          * the default blue colors.
          */
         darkBg: "#121212",
+        darkSurface: "#2a2a2a",
+        lightSurface: "#fff",
         lightBg: "#ececf3",
+        highlight: "#f1c40f",
       },
     },
   },

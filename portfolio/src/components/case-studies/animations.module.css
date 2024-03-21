@@ -1,0 +1,29 @@
+.x-axis-animation {
+    animation: x-axis-animation 2s linear infinite;
+}
+
+.y-axis-animation {
+    animation: y-axis-animation 10s linear infinite;
+}
+
+/* animation that moves from left: 0 to left: -100% */
+@keyframes x-axis-animation {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+/* animation that moves from top: 0 to top: -100% */
+@keyframes y-axis-animation {
+    0% {
+        bottom: 100%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}
