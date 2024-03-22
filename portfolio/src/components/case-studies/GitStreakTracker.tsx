@@ -166,7 +166,7 @@ const GitStreakTracker = () => {
             <div
                 className={clsx(
                     'relative z-[10] p-4 sm:p-10 lg:pl-10 lg:py-12 lg:pr-0 w-full lg:w-2/3 gst-text-content text-center sm:text-left',
-                    'bg-gradient-to-r dark:from-darkBg from-[#fff] to-transparent dark:from-[#1f1f1f] dark:to-transparent',
+                    'bg-gradient-to-r dark:from-darkBg from-[#fff] to-transparent dark:to-transparent',
                 )}
             >
                 <div
