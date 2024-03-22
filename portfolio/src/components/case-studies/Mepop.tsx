@@ -1,42 +1,46 @@
 import clsx from "clsx"
 import bgPattern from '../../assets/mepop-bg.webp'
-import { use, useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import styles from './animations.module.css'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 
 const MepopCaseStudy = () => {
     useEffect(() => {
-        // gsap.registerPlugin(ScrollTrigger);
-        // gsap.to('.background-image', {
-        //     scrollTrigger: {
-        //         trigger: '.background-image',
-        //         scrub: true, // Makes the animation smooth and links it directly to scroll position
-        //         start: 'top bottom', // Start the animation when the top of the image hits the bottom of the viewport
-        //         end: 'bottom top' // End the animation when the bottom of the image hits the top of the viewport
-        //     },
-        //     y: -105, // Adjust the value to control the amount of vertical shift
-        // });
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to('.background-image', {
+            scrollTrigger: {
+                trigger: '.background-image',
+                scrub: true, // Makes the animation smooth and links it directly to scroll position
+                start: 'top bottom', // Start the animation when the top of the image hits the bottom of the viewport
+                end: 'bottom top' // End the animation when the bottom of the image hits the top of the viewport
+            },
+            y: -105, // Adjust the value to control the amount of vertical shift
+        });
     }, [])
+
 
     return (
         <div
             className={clsx(
-                'dark:bg-darkSurface bg-lightSurface rounded-xl relative mt-[500px]',
-                'md:p-10 overflow-hidden h-[330px]'
+                'dark:shadow-caseStudyDark shadow-caseStudyLight dark:bg-darkSurface bg-lightSurface dark:bg-opacity-10 bg-opacity-10',
+                'p-4 sm:p-10 overflow-hidden h-auto lg:h-[330px] rounded-xl relative'
             )}
-            style={{
-                backgroundImage: `url(${bgPattern.src})`,
-                backgroundAttachment: 'fixed',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-            }}
         >
-            <div className="flex gap-10 items-center">
+            <Image
+                src={bgPattern}
+                alt="Background Pattern"
+                className='absolute top-0 left-0 w-[135%] h-[135%] rounded-xl background-image'
+            />
 
-                <div className='flex-1'>
+            <div className="flex lg:flex-row flex-col gap-10 items-center">
+
+                <div className='flex-1 text-center sm:text-left'>
                     <div
-                        className='flex items-center gap-2'
+                        className='flex lg:items-center gap-2 flex-col lg:flex-row md:whitespace-nowrap'
                     >
-                        <h3 className="text-4xl font-semibold dark:text-gray-200 mb-2">
+                        <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2">
                             <a
                                 href="https://www.platica.xyz/"
                                 className="transition dark:hover:text-gray-400"
@@ -46,9 +50,10 @@ const MepopCaseStudy = () => {
                         </h3>
 
                         {/* White divider */}
-                        <div className="w-[1px] h-10 bg-white" />
+                        <div className='hidden lg:flex'>
 
-                        Analytics for Depop Sellers
+                            Analytics for Depop Sellers
+                        </div>
                     </div>
 
                     <div
@@ -57,11 +62,16 @@ const MepopCaseStudy = () => {
                         Mepop revolutionizes sales tracking for Depop's 11 million users, offering an intuitive tool to analyze profits from CSV files, bypassing the lack of a Depop API. It provides personalized insights for you individual shop -- which items sells best, on which days, to which demographic. Born from personal need and market demand, it simplifies financial oversight for sellers. Created over 5 years ago, I'm fully hands off of this project, and it still continues to serve its ever-growing userbase.
                     </div>
                 </div>
+
                 <div
                     className={clsx(
-                        'w-[340px] h-[220px] bg-highlight bg-opacity-10 flex-1 relative overflow-hidden',
-                        'border-b-2 border-highlight border-l-2 border-highlight rounded-bl rounded-tr rounded',
-
+                        // mobile
+                        'w-full h-full opacity-50 left-0 bottom-0 absolute',
+                        // tablet and up
+                        'lg:w-[340px] lg:h-[220px] lg:opacity-100 lg:relative',
+                        // colors n stuff
+                        'border-b-2 border-highlight lg:border-l-2 rounded-bl rounded-tr rounded',
+                        'bg-highlight bg-opacity-10 flex-1 overflow-hidden',
                     )}
                 >
                     <div
@@ -71,7 +81,7 @@ const MepopCaseStudy = () => {
                         )}
                     >
                         {
-                            Array(50).fill(0).map((_, i) => (
+                            Array(60).fill(0).map((_, i) => (
                                 // x axis lines
                                 <div
                                     key={i}
@@ -89,12 +99,12 @@ const MepopCaseStudy = () => {
 
                     <div
                         className={clsx(
-                            'absolute h-full bottom-0 left-[8px]',
+                            'absolute h-full bottom-0 left-[8px] hidden lg:flex',
                             // styles['y-axis-animation']
                         )}
                     >
                         {
-                            Array(50).fill(0).map((_, i) => (
+                            Array(20).fill(0).map((_, i) => (
                                 // x axis lines
                                 <div
                                     key={i}
@@ -110,7 +120,7 @@ const MepopCaseStudy = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 
@@ -155,9 +165,9 @@ const LineChartAnimation = () => {
         });
     }, [headPos])
 
-    const setHeadPositionition = (e) => {
+    const setHeadPositionition = (e: React.MouseEvent<HTMLDivElement>) => {
         // set x and y of headPos based on the div position
-        const rect = e.target.getBoundingClientRect();
+        const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left; //x position within the element.
         const y = e.clientY - rect.top;  //y position within the element.
         setHeadPosition({ x, y });
@@ -176,6 +186,7 @@ const LineChartAnimation = () => {
             }
         };
     }, [animateLine]);
+
 
 
     const incrementHeadToTargetHead = useCallback(() => {
@@ -245,7 +256,7 @@ const LineChartAnimation = () => {
                     className='absolute w-full h-full left-0 top-0'
                 />
 
-                <svg width="100%" height="219">
+                <svg width="100%" height="100%" className='-left-[100px] sm:left-0 absolute sm:static'>
                     <defs>
                         <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style={{ stopColor: '#f1c40f', stopOpacity: 1 }} />
@@ -258,6 +269,7 @@ const LineChartAnimation = () => {
                         stroke="url(#lineGradient)"
                         strokeWidth="2"
                     />
+
                     <circle cx={points[0].x} cy={points[0].y} r="2" fill="white" />
                 </svg>
             </div>

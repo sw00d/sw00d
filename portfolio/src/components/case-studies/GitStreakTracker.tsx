@@ -1,63 +1,198 @@
 import clsx from "clsx"
-import bgPattern from '../../assets/mepop-bg.webp'
-import Image from "next/image"
-import { useEffect } from "react"
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useEffect, useMemo, useRef, useState } from "react"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const GitStreakTracker = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [cellHeight, setCellHeight] = useState(0);
+    const [gridMatrix, setGridMatrix] = useState([] as any[][]);
+
+    const selectBlock = (col: number, row: number) => {
+        const newGridMatrix = gridMatrix.map((column, j) => {
+            return column.map((block, i) => {
+                if (j === col && i === row) {
+                    return {
+                        ...block,
+                        selected: !block.selected
+                    }
+                } else {
+                    return block
+                }
+            })
+        })
+        setGridMatrix(newGridMatrix)
+    }
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to('.background-image', {
-            scrollTrigger: {
-                trigger: '.background-image',
-                scrub: true, // Makes the animation smooth and links it directly to scroll position
-                start: 'top bottom', // Start the animation when the top of the image hits the bottom of the viewport
-                end: 'bottom top' // End the animation when the bottom of the image hits the top of the viewport
-            },
-            y: -105, // Adjust the value to control the amount of vertical shift
-        });
+
+        const rows = Array(7).fill(0);
+        const columns = Array(70).fill(0);
+
+        const getSelected = (i: number, j: number) => {
+            // we want randomized selected cells unless its the last three blocks
+            if (
+                i === rows.length - 1 && j === columns.length - 1 ||
+                i === rows.length - 2 && j === columns.length - 1 ||
+                i === rows.length - 3 && j === columns.length - 1 ||
+                i === rows.length - 4 && j === columns.length - 1
+            ) {
+                // first 4 are always selected
+                return true;
+            } else {
+                return Math.random() > .5;
+            }
+        }
+
+        setGridMatrix(columns.map((_, j) => {
+            return rows.map((_, i) => {
+                return {
+                    x: i,
+                    y: j,
+                    selected: getSelected(i, j)
+                }
+            })
+        }))
     }, [])
+
+    const streakCount = useMemo(() => {
+        // streakCount is the number of blocks in a row that are selected starting with the last block
+        let count = 0;
+
+        // loop backwards through columns
+        for (let i = gridMatrix.length - 1; i >= 0; i--) {
+            // loop backwards through rows
+            for (let j = gridMatrix[i].length - 1; j >= 0; j--) {
+                if (gridMatrix[i][j].selected) {
+                    count++;
+                } else {
+                    return count
+                }
+            }
+        }
+
+        return count
+    }, [gridMatrix]);
+
+    const getBgColor = (col: number, row: number) => {
+        const totalBlock = gridMatrix.length * gridMatrix[0].length;
+        const block = gridMatrix[col][row];
+        const blockNumber = col * gridMatrix[0].length + row;
+
+        return totalBlock - streakCount <= blockNumber ? 'bg-[#bc3e3e]' : block.selected ? 'bg-[green]' : ''
+    }
+
+    useEffect(() => {
+        // gsap related
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo('.gst-text-content',
+            { x: -40, opacity: 0, },
+            {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: '.git-streak-container',
+                    start: 'top center', // Trigger animation when the top of '.speech-bubble' hits the center of the viewport
+                    end: 'bottom top', // Animation will complete when the bottom of '.speech-bubble' exits the top of the viewport
+                    toggleActions: 'play none none none',
+                },
+            }
+        );
+
+        // Cell size related
+        const updateSize = () => {
+            if (containerRef.current) {
+                setCellHeight(containerRef.current.clientHeight / (7 + .4)); // + .2 to make bottom border hidden
+            }
+        };
+
+        updateSize(); // Initial size update
+
+        const resizeObserver = new ResizeObserver(() => {
+            updateSize();
+        });
+
+        if (containerRef.current) {
+            resizeObserver.observe(containerRef.current);
+        }
+
+
+
+        return () => resizeObserver.disconnect();
+    }, []); // Empty array means this effect runs once on mount and never again
 
     return (
         <div
+            ref={containerRef}
             className={clsx(
-                'dark:bg-darkSurface bg-lightSurface rounded-xl relative mt-[500px]',
-                'md:p-10 overflow-hidden h-[330px]'
+                'rounded-xl relative',
+                'overflow-hidden git-streak-container'
             )}
         >
 
-            <Image
-                src={bgPattern}
-                alt="Background Pattern"
-                className='absolute top-0 left-0 w-[135%] h-[135%] rounded-xl background-image'
-            />
+            {/* programatically create a grid of rectanges 27px by 32px, transparent with a border as a background */}
+            <div
+                className='absolute top-0 right-0 w-full h-full flex justify-end opacity-60'
+            >
+                {
+                    gridMatrix.map((column, j) => {
+                        return (
+                            <div key={j}>
+                                {
+                                    column.map((block, i) => {
+                                        return (
+                                            <div
+                                                key={i}
+                                                className={clsx(
+                                                    `m-[2px] cursor-pointer ${getBgColor(j, i)} hover:scale-105`,
+                                                    'border rounded dark:border-white light:border-black dark:border-opacity-10',
+                                                    'transition-all duration-200 ease-in-out',
+                                                )}
+                                                style={{
+                                                    height: `${cellHeight}px`,
+                                                    width: `${cellHeight}px`
+                                                }}
+                                                onClick={() => selectBlock(j, i)}
+                                            />
+                                        )
+                                    })
+                                }
+                            </div>
+                        )
+                    })
+                }
+            </div>
 
             <div
-                className='relative z-10'
+                className={clsx(
+                    'relative z-[10] p-4 sm:p-10 lg:pl-10 lg:py-12 lg:pr-0 w-full lg:w-2/3 gst-text-content text-center sm:text-left',
+                    'bg-gradient-to-r dark:from-darkBg from-[#fff] to-transparent dark:from-[#1f1f1f] dark:to-transparent',
+                )}
             >
                 <div
-                    className='flex items-center gap-2'
+                    className='flex lg:items-center gap-2 flex-col lg:flex-row md:whitespace-nowrap'
                 >
-                    <h3 className="text-4xl font-semibold dark:text-gray-200 mb-2">
+
+                    <h3
+                        className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2"
+                    >
                         <a
                             href="https://www.platica.xyz/"
                             className="transition dark:hover:text-gray-400"
                         >
-                            Mepop
+                            Git Streak Tracker
                         </a>
                     </h3>
 
-                    {/* White divider */}
-                    <div className="w-[1px] h-10 bg-white" />
-
-                    Analytics for Depop Sellers
+                    <div className='hidden lg:flex'>
+                        Git Contribution Tracker
+                    </div>
                 </div>
 
                 <div
-                    className='w-1/2 mt-5 text-sm font-light'
+                    className='mt-3 md:mt-5 text-sm font-light'
                 >
-                    Mepop revolutionizes sales tracking for Depop's 11 million users, offering an intuitive tool to analyze profits from CSV files, bypassing the lack of a Depop API. It provides personalized insights for you individual shop -- which items sells best, on which days, to which demographic. Born from personal need and market demand, it simplifies financial oversight for sellers. Created over 5 years ago, I'm fully hands off of this project, and it still continues to serve its ever-growing userbase.
+                    Built with a buddy of mine, we used this as an exploratory Swift project which actually turned into a usefule tool that I use daily. This IOS app tracks your git contributions while also offering two different widgets that you can fix on your home screen as a reminder to make a contribution that day. It's a gamified way to make sure you code at least a little bit every day.
                 </div>
             </div>
 
@@ -67,3 +202,7 @@ const GitStreakTracker = () => {
 
 export default GitStreakTracker
 
+
+{/* <a href="https://git-streak-tracker.herokuapp.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">Cool web demo</a> (not mobile responsive 📵)<br />
+<a href="https://github.com/gibsonbailey/git-streak-tracker" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">View the Repository on GitHub</a><br />
+<a href="https://apps.apple.com/us/app/git-streak-tracker/id1663708723" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">Download the iOS App</a> */}

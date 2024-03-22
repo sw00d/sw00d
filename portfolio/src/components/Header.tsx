@@ -60,7 +60,7 @@ const Header = () => {
                     ref={imageRef} // Attach the ref to the image container
                     variants={animationX}
                     className={clsx(
-                        'w-[100px] h-[100px] p-1',
+                        'w-[100px] h-[100px] min-w-[100px] p-1',
                         'md:w-[200px] md:h-[200px] md:p-3',
                         'lg:w-[200px] lg:h-[200px] lg:p-3 flex relative bg-[#dbdbdb] overflow-hidden rounded-full justify-center items-center',
 

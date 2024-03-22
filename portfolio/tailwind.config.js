@@ -24,6 +24,8 @@ module.exports = {
       boxShadow: {
         "custom-light": "0 0px 20px white",
         "custom-dark": "0 0px 40px black",
+        caseStudyDark: "0px 0px 15px rgba(255,255,255,0.1)",
+        caseStudyLight: "0px 0px 40px rgba(0,0,0,0.2)",
       },
       colors: {
         /**

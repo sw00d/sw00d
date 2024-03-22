@@ -8,43 +8,25 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const PlaticaCaseStudy = () => {
-    const [speechBubbleLocations, setSpeechBubbles] = useState(bubbleLocations)
     const [bubbleAnimated, setBubbleAnimated] = useState(false)
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setSpeechBubbles((prev) => {
-                const newBubbles = [...prev]
+    // useEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
 
-                //always makes sure at least 2 bubbles are shown
-                const randomIndex = Math.floor(Math.random() * prev.length)
-                const randomIndex2 = Math.floor(Math.random() * prev.length)
-                newBubbles[randomIndex].isShown = true
-                newBubbles[randomIndex2].isShown = true
-                return newBubbles
-            })
-
-        }, 5000)
-
-        return () => clearInterval(interval)
-    }, [])
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.fromTo('.speech-bubble',
-            { scale: 0 },
-            {
-                scale: 1,
-                scrollTrigger: {
-                    trigger: '.platica-case-study',
-                    start: 'top center', // Trigger animation when the top of '.speech-bubble' hits the center of the viewport
-                    end: 'bottom top', // Animation will complete when the bottom of '.speech-bubble' exits the top of the viewport
-                    toggleActions: 'play none play reverse',
-                },
-            }
-        );
-    }, []);
+    //     gsap.fromTo('.speech-bubble',
+    //         { scale: 0 },
+    //         {
+    //             scale: 1,
+    //             duration: .2,
+    //             scrollTrigger: {
+    //                 trigger: '.platica-case-study',
+    //                 start: 'top center', // Trigger animation when the top of '.speech-bubble' hits the center of the viewport
+    //                 end: 'bottom top', // Animation will complete when the bottom of '.speech-bubble' exits the top of the viewport
+    //                 toggleActions: 'play none play reverse',
+    //             },
+    //         }
+    //     );
+    // }, []);
 
     const duration = 300
     const handleBubbleClick = () => {
@@ -59,20 +41,22 @@ const PlaticaCaseStudy = () => {
     return (
         <div
             className={clsx(
-                'dark:bg-darkSurface bg-lightSurface rounded-xl relative platica-case-study',
-                'md:p-10'
+                'dark:shadow-caseStudyDark shadow-caseStudyLight dark:bg-darkSurface bg-lightSurface dark:bg-opacity-10 bg-opacity-10',
+                'rounded-xl relative platica-case-study',
+                'p-4 sm:p-10'
             )}
         >
-            <Image
+            {/* <Image
                 src={worldMap}
                 alt="World Map"
                 className='absolute top-0 left-0 object-cover w-full h-full rounded-xl'
-            />
+            /> */}
+
             <div
                 className={clsx(
                     'speech-bubble absolute z-0 opacity-1',
                     'w-[290px] h-[290px] origin-bottom-left',
-                    // 'transition-all duration-500 ease-in-out scale-1',
+                    'hidden lg:flex'
                 )}
                 style={{
                     top: -100,
@@ -90,38 +74,15 @@ const PlaticaCaseStudy = () => {
                     )}
                 />
             </div>
-            {/* {
-                speechBubbleLocations.map((location, index) => (
-                    <div
-                        key={index}
-                        className={clsx(
-                            'absolute z-0',
-                            'w-5 h-5',
-                            'transition-all duration-500 ease-in-out',
-                            location.isShown ? 'scale-1' : 'scale-0'
-                            // styles.speechBubble,
-                        )}
-                        style={{
-                            top: location.y,
-                            left: location.x
-                        }}
-                    >
-                        <Image
-                            src={speechBubble}
-                            alt='Speech Bubble'
-                            fill
-                        />
-                    </div>
-                ))
-            } */}
-            <div
-                className='relative z-10'
-            >
 
+            <div
+                className='relative z-10 flex-1 text-center sm:text-left lg:w-1/2 xl:w-2/3'
+
+            >
                 <div
-                    className='flex items-center gap-2'
+                    className='flex lg:items-center gap-2 flex-col lg:flex-row md:whitespace-nowrap'
                 >
-                    <h3 className="text-4xl font-semibold dark:text-gray-200 mb-2">
+                    <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2">
                         <a
                             href="https://www.platica.xyz/"
                             className="transition dark:hover:text-gray-400"
@@ -131,13 +92,14 @@ const PlaticaCaseStudy = () => {
                     </h3>
 
                     {/* White divider */}
-                    <div className="w-[1px] h-10 bg-white" />
+                    <div className='hidden lg:flex'>
 
-                    Real time, conversational translation
+                        Real time, conversational translation
+                    </div>
                 </div>
 
                 <div
-                    className='w-1/2 mt-5 text-sm font-light'
+                    className='mt-5 text-sm font-light'
                 >
                     Powered by GPT-4, Platica is a platform that enhances the communication by integrating real time communication into public chatrooms. While this MVP is still primitive, it showcases the utility of the technology and is used by everybody from ESL instructors, to lovers who don’t share a common tongue. We plan to make this project more robust in the near future, putting together a native app and expanding to our current site’s functionality.
                 </div>
