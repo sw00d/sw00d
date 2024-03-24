@@ -116,8 +116,6 @@ const GitStreakTracker = () => {
             resizeObserver.observe(containerRef.current);
         }
 
-
-
         return () => resizeObserver.disconnect();
     }, []); // Empty array means this effect runs once on mount and never again
 

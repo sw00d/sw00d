@@ -1,34 +1,13 @@
 import clsx from "clsx"
-import worldMap from '../../assets/world-map.png'
 import speechBubble from '../../assets/speech-bubble.webp'
 import Image from "next/image"
-import { useEffect, useState } from "react"
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useState } from "react"
+import Particles from "@tsparticles/react";
 
 const PlaticaCaseStudy = () => {
     const [bubbleAnimated, setBubbleAnimated] = useState(false)
 
-    // useEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-
-    //     gsap.fromTo('.speech-bubble',
-    //         { scale: 0 },
-    //         {
-    //             scale: 1,
-    //             duration: .2,
-    //             scrollTrigger: {
-    //                 trigger: '.platica-case-study',
-    //                 start: 'top center', // Trigger animation when the top of '.speech-bubble' hits the center of the viewport
-    //                 end: 'bottom top', // Animation will complete when the bottom of '.speech-bubble' exits the top of the viewport
-    //                 toggleActions: 'play none play reverse',
-    //             },
-    //         }
-    //     );
-    // }, []);
-
-    const duration = 300
+    const duration = 200
     const handleBubbleClick = () => {
         if (bubbleAnimated) return
 
@@ -42,16 +21,19 @@ const PlaticaCaseStudy = () => {
         <div
             className={clsx(
                 'dark:shadow-caseStudyDark shadow-caseStudyLight dark:bg-darkSurface bg-lightSurface dark:bg-opacity-10 bg-opacity-10',
-                'rounded-xl relative platica-case-study',
+                'rounded-xl relative',
                 'p-4 sm:p-10'
             )}
         >
-            {/* <Image
-                src={worldMap}
-                alt="World Map"
-                className='absolute top-0 left-0 object-cover w-full h-full rounded-xl'
-            /> */}
-
+            <Particles
+                options={options}
+                //   position: absolute;
+                //   height: 100%;
+                //   width: 100%;
+                //   left: 0;
+                //   top: 0;
+                className=' absolute w-full h-full left-0 top-0'
+            />
             <div
                 className={clsx(
                     'speech-bubble absolute z-0 opacity-1',
@@ -91,9 +73,7 @@ const PlaticaCaseStudy = () => {
                         </a>
                     </h3>
 
-                    {/* White divider */}
                     <div className='hidden lg:flex'>
-
                         Real time, conversational translation
                     </div>
                 </div>
@@ -112,56 +92,46 @@ const PlaticaCaseStudy = () => {
 export default PlaticaCaseStudy
 
 
-const bubbleLocations = [
-    {
-        isShown: false,
-        x: 500,
-        y: 50,
+const options = {
+    fullScreen: false,
+    fpsLimit: 120,
+    interactivity: {
+        events: {
+            onHover: {
+                enable: true,
+                mode: "repulse",
+            },
+        },
+        modes: {
+            repulse: {
+                distance: 50,
+                duration: 0.4,
+            },
+        },
     },
-    {
-        isShown: false,
-        x: 589.0086669921875,
-        y: 158.4774169921875,
+    particles: {
+        color: {
+            value: "blue",
+        },
+        links: {
+            color: "#ffffff",
+            distance: 150,
+            enable: true,
+            opacity: 0.1,
+            width: 1,
+        },
+        move: {
+            enable: true,
+            random: false,
+            speed: 1,
+            straight: false,
+        },
+        number: {
+            density: {
+                enable: true,
+            },
+            value: 300,
+        },
     },
-    {
-        isShown: false,
-        x: 435.0086669921875,
-        y: 263.4774169921875,
-    },
-    {
-        isShown: false,
-        x: 769.0086669921875,
-        y: 20.4774169921875,
-    },
-    {
-        isShown: false,
-        x: 614.0086669921875,
-        y: 64.4774169921875,
-    },
-    {
-        isShown: false,
-        x: 394.0086669921875,
-        y: 86.4774169921875,
-    },
-    {
-        isShown: false,
-        // top left
-        x: 106.0086669921875,
-        y: 15.4774169921875,
-    },
-    {
-        isShown: false,
-        x: 201.0086669921875,
-        y: 252.4774169921875,
-    },
-    {
-        isShown: false,
-        x: 675.0086669921875,
-        y: 93.4774169921875,
-    },
-    {
-        isShown: false,
-        x: 717.0086669921875,
-        y: 240.4774169921875,
-    },
-]
+    detectRetina: true,
+}

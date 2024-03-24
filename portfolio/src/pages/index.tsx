@@ -3,9 +3,21 @@ import HomePageComponent from '@/components/HomePage'
 import clsx from 'clsx'
 import styles from '../styles/Home.module.css'
 import { useTheme } from '@/context/themeContext';
+import { useEffect } from 'react';
+import { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+
+
 
 export default function Home() {
   const { theme } = useTheme();
+
+  // this should be run only once per application lifetime
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    })
+  }, []);
 
   return (
     <>
