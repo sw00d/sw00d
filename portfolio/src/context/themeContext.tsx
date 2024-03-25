@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface ThemeContextType {
-    theme: string;
+    theme: 'light' | 'dark';
     toggleTheme: () => void;
 }
 interface ThemeProviderProps {

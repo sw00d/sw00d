@@ -1,11 +1,17 @@
 import clsx from "clsx"
 import speechBubble from '../../assets/speech-bubble.webp'
 import Image from "next/image"
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import Particles from "@tsparticles/react";
+import { useTheme } from "@/context/themeContext";
 
 const PlaticaCaseStudy = () => {
     const [bubbleAnimated, setBubbleAnimated] = useState(false)
+    const { theme } = useTheme();
+
+    const options = useMemo(() => {
+        return getOptions(`${theme}`)
+    }, [theme]);
 
     const duration = 200
     const handleBubbleClick = () => {
@@ -22,18 +28,14 @@ const PlaticaCaseStudy = () => {
             className={clsx(
                 'dark:shadow-caseStudyDark shadow-caseStudyLight dark:bg-darkSurface bg-lightSurface dark:bg-opacity-10 bg-opacity-10',
                 'rounded-xl relative',
-                'p-4 sm:p-10'
+                'py-14 px-4 sm:p-10'
             )}
         >
             <Particles
                 options={options}
-                //   position: absolute;
-                //   height: 100%;
-                //   width: 100%;
-                //   left: 0;
-                //   top: 0;
-                className=' absolute w-full h-full left-0 top-0'
+                className='absolute w-full h-full left-0 top-0'
             />
+
             <div
                 className={clsx(
                     'speech-bubble absolute z-0 opacity-1',
@@ -58,17 +60,20 @@ const PlaticaCaseStudy = () => {
             </div>
 
             <div
-                className='relative z-10 flex-1 text-center sm:text-left lg:w-1/2 xl:w-2/3'
+                className='relative z-10 flex-1 text-left lg:w-1/2 xl:w-2/3'
 
             >
                 <div
                     className='flex lg:items-center gap-2 flex-col lg:flex-row md:whitespace-nowrap'
                 >
-                    <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2">
+                    <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-darkBg dark:border-lightBg pr-2">
                         <a
                             href="https://www.platica.xyz/"
-                            className="transition dark:hover:text-gray-400"
+                            className="transition dark:hover:text-gray-400 flex"
                         >
+                            <span className='flex lg:hidden mr-2'>
+                                💬
+                            </span>
                             Plática
                         </a>
                     </h3>
@@ -92,7 +97,7 @@ const PlaticaCaseStudy = () => {
 export default PlaticaCaseStudy
 
 
-const options = {
+const getOptions = (type: 'light' | 'dark') => ({
     fullScreen: false,
     fpsLimit: 120,
     interactivity: {
@@ -114,10 +119,10 @@ const options = {
             value: "blue",
         },
         links: {
-            color: "#ffffff",
+            color: type === 'dark' ? '#fff' : "#FF5733",
             distance: 150,
             enable: true,
-            opacity: 0.1,
+            opacity: type === 'dark' ? .4 : 1,
             width: 1,
         },
         move: {
@@ -134,4 +139,4 @@ const options = {
         },
     },
     detectRetina: true,
-}
+})

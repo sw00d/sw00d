@@ -5,6 +5,7 @@ import styles from './animations.module.css'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
+import { useTheme } from "@/context/themeContext";
 
 const MepopCaseStudy = () => {
     useEffect(() => {
@@ -25,7 +26,7 @@ const MepopCaseStudy = () => {
         <div
             className={clsx(
                 'dark:shadow-caseStudyDark shadow-caseStudyLight dark:bg-darkSurface bg-lightSurface dark:bg-opacity-10 bg-opacity-10',
-                'p-4 sm:p-10 overflow-hidden h-auto lg:h-[330px] rounded-xl relative'
+                'py-14 px-4 sm:p-10 overflow-hidden h-auto lg:h-[330px] rounded-xl relative'
             )}
         >
             <Image
@@ -36,13 +37,13 @@ const MepopCaseStudy = () => {
 
             <div className="flex lg:flex-row flex-col gap-10 items-center">
 
-                <div className='flex-1 text-center sm:text-left'>
+                <div className='flex-1 text-left relative'>
                     <div
                         className='flex lg:items-center gap-2 flex-col lg:flex-row md:whitespace-nowrap'
                     >
-                        <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2">
+                        <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-highlightSecondary dark:border-lightBg pr-2">
                             <a
-                                href="https://www.platica.xyz/"
+                                href="https://www.mepop.com"
                                 className="transition dark:hover:text-gray-400"
                             >
                                 Mepop
@@ -70,8 +71,8 @@ const MepopCaseStudy = () => {
                         // tablet and up
                         'lg:w-[340px] lg:h-[220px] lg:opacity-100 lg:relative',
                         // colors n stuff
-                        'border-b-2 border-highlight lg:border-l-2 rounded-bl rounded-tr rounded',
-                        'bg-highlight bg-opacity-10 flex-1 overflow-hidden',
+                        'border-b-2 border-highlightSecondary dark:border-highlight lg:border-l-2 rounded-bl rounded-tr rounded',
+                        'bg-highlightSecondary dark:bg-highlight dark:bg-opacity-10 bg-opacity-10 flex-1 overflow-hidden',
                     )}
                 >
                     <div
@@ -85,7 +86,7 @@ const MepopCaseStudy = () => {
                                 // x axis lines
                                 <div
                                     key={i}
-                                    className='w-[1px] h-[8px] bg-highlight absolute'
+                                    className='w-[1px] h-[8px] bg-highlightSecondary dark:bg-highlight absolute'
                                     style={{
                                         top: '-8px',
                                         left: `${i * 20}px`,
@@ -108,7 +109,7 @@ const MepopCaseStudy = () => {
                                 // x axis lines
                                 <div
                                     key={i}
-                                    className='h-[1px] w-[8px] bg-highlight absolute'
+                                    className='h-[1px] w-[8px] bg-highlightSecondary dark:bg-highlight absolute'
                                     style={{
                                         top: `${i * 20}px`,
                                         left: '-8px',
@@ -134,6 +135,8 @@ const LineChartAnimation = () => {
         // Initialize points along the Y-axis
         return Array.from({ length: 40 }, (_, i) => ({ x: getPointX(i), y: 125 }));
     });
+
+    const { theme } = useTheme();
 
     const [isHovering, setIsHovering] = useState(false);
     const requestIdRef = useRef();
@@ -259,8 +262,8 @@ const LineChartAnimation = () => {
                 <svg width="100%" height="100%" className='-left-[100px] sm:left-0 absolute sm:static'>
                     <defs>
                         <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style={{ stopColor: '#f1c40f', stopOpacity: 1 }} />
-                            <stop offset="50%" style={{ stopColor: 'white', stopOpacity: 1 }} />
+                            <stop offset="0%" style={{ stopColor: theme === 'light' ? '#fff' : '#f1c40f', stopOpacity: 1 }} />
+                            <stop offset="50%" style={{ stopColor: theme === 'light' ? '#FF5733' : '#fff', stopOpacity: 1 }} />
                         </linearGradient>
                     </defs>
                     <polyline
@@ -270,7 +273,7 @@ const LineChartAnimation = () => {
                         strokeWidth="2"
                     />
 
-                    <circle cx={points[0].x} cy={points[0].y} r="2" fill="white" />
+                    <circle cx={points[0].x} cy={points[0].y} r="2" fill={theme === 'dark' ? "white" : '#FF5733'} />
                 </svg>
             </div>
         </>

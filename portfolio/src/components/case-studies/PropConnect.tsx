@@ -2,6 +2,10 @@ import clsx from "clsx"
 import { useEffect, useMemo, useRef, useState } from "react"
 
 const PropConnectCaseStudy = () => {
+    useEffect(() => {
+        console.log('moutnting');
+    }, [])
+
     return (
         <div
             className={clsx(
@@ -11,18 +15,18 @@ const PropConnectCaseStudy = () => {
         >
 
             <div
-                className='relative z-10 flex-1 text-center sm:text-left'
+                className='relative z-10 flex-1 text-left'
 
             >
-                <div className='flex h-full gap-4 '>
-                    <div className='w-full lg:w-2/3 flex flex-col relative z-10 p-4 sm:p-10'>
+                <div className='flex h-full gap-4'>
+                    <div className='w-full lg:w-2/3 flex flex-col relative z-10 py-14 px-4 sm:p-10'>
                         <div
                             className={clsx(
                                 'flex lg:items-center gap-2 flex-col lg:flex-row md:whitespace-nowrap',
                                 'lg:w-1/2 xl:w-2/3',
                             )}
                         >
-                            <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2">
+                            <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-darkBg dark:border-lightBg pr-2">
                                 <a
                                     href="https://propconnect.io/"
                                     target="_blank"
@@ -152,7 +156,7 @@ const PropConnectAnimation = () => {
         <div
             ref={scrollRef}
             className={clsx(
-                'flex-1 h-[310px] max-h-[100%] overflow-hidden absolute w-full opacity-30 z-0',
+                'flex-1 md:h-[310px] max-h-[100%] overflow-hidden absolute w-full opacity-30 z-0',
                 'lg:opacity-100 lg:relative scroll-smooth'
             )}
         >

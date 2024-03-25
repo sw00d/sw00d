@@ -92,8 +92,8 @@ const GitStreakTracker = () => {
                 opacity: 1,
                 scrollTrigger: {
                     trigger: '.git-streak-container',
-                    start: 'top center', // Trigger animation when the top of '.speech-bubble' hits the center of the viewport
-                    end: 'bottom top', // Animation will complete when the bottom of '.speech-bubble' exits the top of the viewport
+                    start: 'top bottom',
+                    end: 'bottom top',
                     toggleActions: 'play none none none',
                 },
             }
@@ -127,8 +127,7 @@ const GitStreakTracker = () => {
                 'overflow-hidden git-streak-container'
             )}
         >
-
-            {/* programatically create a grid of rectanges 27px by 32px, transparent with a border as a background */}
+            {/* Background */}
             <div
                 className='absolute top-0 right-0 w-full h-full flex justify-end opacity-60'
             >
@@ -137,7 +136,7 @@ const GitStreakTracker = () => {
                         return (
                             <div key={j}>
                                 {
-                                    column.map((block, i) => {
+                                    column.map((_, i) => {
                                         return (
                                             <div
                                                 key={i}
@@ -163,7 +162,7 @@ const GitStreakTracker = () => {
 
             <div
                 className={clsx(
-                    'relative z-[10] p-4 sm:p-10 lg:pl-10 lg:py-12 lg:pr-0 w-full lg:w-2/3 gst-text-content text-center sm:text-left',
+                    'relative z-[10] py-14 px-4 sm:p-10 lg:pl-10 lg:py-12 lg:pr-0 w-full lg:w-2/3 gst-text-content text-left',
                     'bg-gradient-to-r dark:from-darkBg from-[#fff] to-transparent dark:to-transparent',
                 )}
             >
@@ -175,7 +174,7 @@ const GitStreakTracker = () => {
                         className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2"
                     >
                         <a
-                            href="https://www.platica.xyz/"
+                            href="https://git-streak-tracker.herokuapp.com"
                             className="transition dark:hover:text-gray-400"
                         >
                             Git Streak Tracker
@@ -199,8 +198,3 @@ const GitStreakTracker = () => {
 }
 
 export default GitStreakTracker
-
-
-{/* <a href="https://git-streak-tracker.herokuapp.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">Cool web demo</a> (not mobile responsive 📵)<br />
-<a href="https://github.com/gibsonbailey/git-streak-tracker" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">View the Repository on GitHub</a><br />
-<a href="https://apps.apple.com/us/app/git-streak-tracker/id1663708723" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">Download the iOS App</a> */}
