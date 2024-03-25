@@ -41,7 +41,7 @@ const MepopCaseStudy = () => {
                     <div
                         className='flex lg:items-center gap-2 flex-col lg:flex-row md:whitespace-nowrap'
                     >
-                        <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-highlightSecondary dark:border-lightBg pr-2">
+                        <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-darkBg dark:border-lightBg pr-2">
                             <a
                                 href="https://www.mepop.com"
                                 target="_blank"

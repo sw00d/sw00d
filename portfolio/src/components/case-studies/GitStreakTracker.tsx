@@ -163,7 +163,7 @@ const GitStreakTracker = () => {
             <div
                 className={clsx(
                     'relative z-[10] py-14 px-4 sm:p-10 lg:pl-10 lg:py-12 lg:pr-0 w-full lg:w-2/3 gst-text-content text-left',
-                    'bg-gradient-to-r dark:from-darkBg from-[#fff] to-transparent dark:to-transparent',
+                    'bg-gradient-to-r dark:from-darkBg from-lightBg to-transparent dark:to-transparent',
                 )}
             >
                 <div
@@ -171,7 +171,7 @@ const GitStreakTracker = () => {
                 >
 
                     <h3
-                        className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-white pr-2"
+                        className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-darkBg dark:border-lightBg pr-2"
                     >
                         <a
                             href="https://git-streak-tracker.herokuapp.com"
