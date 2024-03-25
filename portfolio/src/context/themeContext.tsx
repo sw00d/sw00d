@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface ThemeContextType {
-    theme: string;
+    theme: 'light' | 'dark';
     toggleTheme: () => void;
 }
 interface ThemeProviderProps {
@@ -16,11 +16,11 @@ const ThemeContext = createContext<ThemeContextType>({
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-    const [theme, setTheme] = useState('dark'); // Default theme
+    const [theme, setTheme] = useState<'light' | 'dark'>('dark'); // Explicitly setting the type for theme
 
     // Function to toggle the theme
     const toggleTheme = () => {
-        setTheme((current) => (current === 'light' ? 'dark' : 'light'));
+        setTheme(current => current === 'light' ? 'dark' : 'light');
     };
 
     // Effect to apply the theme class to the body
@@ -33,5 +33,5 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
-    )
+    );
 };

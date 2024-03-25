@@ -74,3 +74,24 @@ a {
     transform: rotate(24deg);
   }
 }
+
+/* Content Wrapper Stuff */
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-left: 2rem;
+  /* This overrides the px-4 (1rem) value */
+  padding-right: 2rem;
+  /* Same as above */
+}
+
+/* Media query for Tailwind's 'md' breakpoint, typically 768px */
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding-left: 9rem;
+    /* This overrides the md:px-16 (4rem) value */
+    padding-right: 9rem;
+    /* Same as above */
+  }
+}
