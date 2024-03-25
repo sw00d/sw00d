@@ -13,7 +13,7 @@ export default function Home() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.utils.toArray('.case-study').forEach(caseStudy => {
+        (gsap.utils.toArray('.case-study') as Element[]).forEach((caseStudy: Element) => {
             gsap.fromTo(caseStudy,
                 { y: 50, opacity: 0, },
                 {

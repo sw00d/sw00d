@@ -176,6 +176,8 @@ const GitStreakTracker = () => {
                         <a
                             href="https://git-streak-tracker.herokuapp.com"
                             className="transition dark:hover:text-gray-400"
+                            target="_blank"
+                            rel='noreferrer noopener'
                         >
                             Git Streak Tracker
                         </a>
@@ -189,7 +191,7 @@ const GitStreakTracker = () => {
                 <div
                     className='mt-3 md:mt-5 text-sm font-light'
                 >
-                    Built with a buddy of mine, we used this as an exploratory Swift project which actually turned into a usefule tool that I use daily. This IOS app tracks your git contributions while also offering two different widgets that you can fix on your home screen as a reminder to make a contribution that day. It's a gamified way to make sure you code at least a little bit every day.
+                    Built with a buddy of mine, we used this as an exploratory Swift project which actually turned into a usefule tool that I use daily. This IOS app tracks your git contributions while also offering two different widgets that you can fix on your home screen as a reminder to make a contribution that day. It&apos;s a gamified way to make sure you code at least a little bit every day.
                 </div>
             </div>
 

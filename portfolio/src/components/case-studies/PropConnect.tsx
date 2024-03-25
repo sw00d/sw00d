@@ -2,9 +2,6 @@ import clsx from "clsx"
 import { useEffect, useMemo, useRef, useState } from "react"
 
 const PropConnectCaseStudy = () => {
-    useEffect(() => {
-        console.log('moutnting');
-    }, [])
 
     return (
         <div
@@ -30,7 +27,7 @@ const PropConnectCaseStudy = () => {
                                 <a
                                     href="https://propconnect.io/"
                                     target="_blank"
-
+                                    rel='noreferrer noopener'
                                     className="transition dark:hover:text-gray-400"
                                 >
                                     PropConnect

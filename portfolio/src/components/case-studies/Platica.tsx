@@ -70,6 +70,8 @@ const PlaticaCaseStudy = () => {
                         <a
                             href="https://www.platica.xyz/"
                             className="transition dark:hover:text-gray-400 flex"
+                            target="_blank"
+                            rel='noreferrer noopener'
                         >
                             <span className='flex lg:hidden mr-2'>
                                 💬

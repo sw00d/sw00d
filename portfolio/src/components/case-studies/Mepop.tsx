@@ -44,6 +44,8 @@ const MepopCaseStudy = () => {
                         <h3 className="text-2xl md:text-4xl font-semibold dark:text-gray-200 mb-2 lg:border-r lg:border-highlightSecondary dark:border-lightBg pr-2">
                             <a
                                 href="https://www.mepop.com"
+                                target="_blank"
+                                rel='noreferrer noopener'
                                 className="transition dark:hover:text-gray-400"
                             >
                                 Mepop
@@ -60,7 +62,7 @@ const MepopCaseStudy = () => {
                     <div
                         className='mt-5 text-sm font-light'
                     >
-                        Mepop revolutionizes sales tracking for Depop's 11 million users, offering an intuitive tool to analyze profits from CSV files, bypassing the lack of a Depop API. It provides personalized insights for you individual shop -- which items sells best, on which days, to which demographic. Born from personal need and market demand, it simplifies financial oversight for sellers. Created over 5 years ago, I'm fully hands off of this project, and it still continues to serve its ever-growing userbase.
+                        Mepop revolutionizes sales tracking for Depop&apos;s 11 million users, offering an intuitive tool to analyze profits from CSV files, bypassing the lack of a Depop API. It provides personalized insights for you individual shop -- which items sells best, on which days, to which demographic. Born from personal need and market demand, it simplifies financial oversight for sellers. Created over 5 years ago, I&apos;m fully hands off of this project, and it still continues to serve its ever-growing userbase.
                     </div>
                 </div>
 
