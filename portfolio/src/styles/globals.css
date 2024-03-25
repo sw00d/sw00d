@@ -95,3 +95,13 @@ a {
     /* Same as above */
   }
 }
+
+.avatar-animation {
+  animation: avatar 6s ease-in-out infinite;
+}
+
+@keyframes avatar {
+  50% {
+    transform: translateY(.3rem);
+  }
+}

@@ -62,8 +62,9 @@ const Header = () => {
                     className={clsx(
                         'w-[100px] h-[100px] min-w-[100px] p-1',
                         'md:w-[200px] md:h-[200px] md:p-3',
-                        'lg:w-[200px] lg:h-[200px] lg:p-3 flex relative bg-[#dbdbdb] overflow-hidden rounded-full justify-center items-center',
-
+                        'lg:w-[200px] lg:h-[200px] lg:p-3 flex relative overflow-hidden rounded-2xl justify-center items-center',
+                        'bg-lightBg bg-opacity-40',
+                        'avatar-animation',
                         // Box Shadow
                         'dark:shadow-custom-light shadow-custom-dark',
                     )}
