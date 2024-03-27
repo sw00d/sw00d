@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
 import clsx from 'clsx';
 import { useTheme } from '@/context/themeContext';
+import { AvatarEditDialog } from './AvatarEditDialog';
 
 
 const reverseAnimationX = {
@@ -29,7 +30,7 @@ export const animationY = {
 
 const Header = () => {
     const { toggleTheme } = useTheme();
-
+    const [openDialog, setOpenDialog] = useState(false);
     const [isMouseLeft, setIsMouseLeft] = useState(false);
     const imageRef = useRef<HTMLDivElement>(null); // Reference to the image container
     useEffect(() => {
@@ -56,6 +57,8 @@ const Header = () => {
         <div className='flex gap-4 md:gap-16 flex-col md:flex-row content-wrapper'>
             <div className='flex gap-8'>
 
+                <AvatarEditDialog isOpen={openDialog} hideDialog={() => setOpenDialog(false)} />
+
                 <motion.div
                     ref={imageRef} // Attach the ref to the image container
                     variants={animationX}
@@ -68,6 +71,7 @@ const Header = () => {
                         // Box Shadow
                         'dark:shadow-custom-light shadow-custom-dark',
                     )}
+                    onClick={() => setOpenDialog(true)}
                 >
                     <Image
                         src="/sam.png"
