@@ -97,7 +97,7 @@ a {
 }
 
 .avatar-animation {
-  animation: avatar 6s ease-in-out infinite;
+  animation: avatar 4s ease-in-out infinite;
 }
 
 @keyframes avatar {
