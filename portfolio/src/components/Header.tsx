@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
 import clsx from 'clsx';
 import { useTheme } from '@/context/themeContext';
-import { AvatarEditDialog } from './AvatarEditDialog';
+import TransparentAreaCanvas from './InteractiveAvatar';
 
 
 const reverseAnimationX = {
@@ -30,6 +30,7 @@ export const animationY = {
 
 const Header = () => {
     const { toggleTheme } = useTheme();
+    const [hideAvatar, setHideAvatar] = useState(false);
     const [openDialog, setOpenDialog] = useState(false);
     const [isMouseLeft, setIsMouseLeft] = useState(false);
     const imageRef = useRef<HTMLDivElement>(null); // Reference to the image container
@@ -52,32 +53,42 @@ const Header = () => {
         };
     }, []);
 
+    const containerVariants = {
+        visible: { width: 'auto', opacity: 1, transition: { duration: .7 } },
+        hidden: { width: 0, opacity: 0, transition: { duration: .7 } },
+    };
+
     return (
 
-        <div className='flex gap-4 md:gap-16 flex-col md:flex-row content-wrapper'>
-            <div className='flex gap-8'>
+        <div
+            className={clsx(
+                'flex flex-col md:flex-row content-wrapper transition',
+                !hideAvatar && 'gap-4 md:gap-16'
+            )}
 
-                <AvatarEditDialog isOpen={openDialog} hideDialog={() => setOpenDialog(false)} />
+        >
+            <div className={clsx('flex transition', hideAvatar ? 'gap-0' : 'gap-8')}>
 
+                {/* Fix mounting animation sam */}
                 <motion.div
-                    ref={imageRef} // Attach the ref to the image container
-                    variants={animationX}
-                    className={clsx(
-                        'w-[100px] h-[100px] min-w-[100px] p-1',
-                        'md:w-[200px] md:h-[200px] md:p-3',
-                        'lg:w-[200px] lg:h-[200px] lg:p-3 flex relative overflow-hidden rounded-2xl justify-center items-center',
-                        'avatar-animation',
-                    )}
-                    onClick={() => setOpenDialog(true)}
+                    variants={containerVariants}
+                    initial="visible"
+                    animate={hideAvatar ? 'hidden' : 'visible'}
                 >
-                    <Image
-                        src="/sam.png"
-                        alt="Sam's Pixel Avatar"
-                        width={300}
-                        priority
-                        height={300}
-                        className={clsx({ 'transform scale-x-[-1]': isMouseLeft })}
-                    />
+                    <motion.div
+                        ref={imageRef} // Attach the ref to the image container
+                        initial="initialState"
+                        animate="animateState"
+                        variants={animationX}
+                        className={clsx(
+                            'w-[100px] h-[100px] min-w-[100px] p-1',
+                            'md:w-[200px] md:h-[200px] md:p-3',
+                            'lg:w-[200px] lg:h-[200px] lg:p-3 flex relative overflow-hidden rounded-2xl justify-center items-center',
+                            'avatar-animation',
+                        )}
+                    >
+                        <TransparentAreaCanvas setHideAvatar={setHideAvatar} />
+                    </motion.div>
                 </motion.div>
 
                 <div className='pt-3'>

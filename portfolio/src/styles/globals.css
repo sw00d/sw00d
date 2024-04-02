@@ -97,6 +97,7 @@ a {
 }
 
 .avatar-animation {
+  transition: transform 1s;
   animation: avatar 4s ease-in-out infinite;
 }
 
