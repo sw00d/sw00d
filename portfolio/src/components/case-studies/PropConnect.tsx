@@ -169,8 +169,8 @@ const PropConnectAnimation = () => {
                             key={i}
                             className={clsx(
                                 'px-3 py-1 text-xs rounded-lg w-[80%] shadow',
-                                message.type === 'right' ? 'bg-[#E9E9EB] dark:bg-[#26252A] self-end' : '',
-                                message.type === 'left' ? 'bg-[#278EFF] self-start' : ''
+                                message.type === 'right' ? 'bg-[#278EFF] self-end' : '',
+                                message.type === 'left' ? 'bg-[#E9E9EB] dark:bg-[#26252A]  self-start' : ''
                             )}
                         >
                             {/* text lines */}
@@ -181,8 +181,8 @@ const PropConnectAnimation = () => {
                                         className={clsx(
                                             'h-[1px] bg-[#26252A] opacity-10 my-2',
                                             message.rows > 1 && i === message.rows - 1 ? 'w-[70%]' : '',
-                                            message.type === 'right' ? 'dark:bg-[#E9E9EB] bg-[#26252A]' : '',
-                                            message.type === 'left' ? 'bg-[#fff]' : ''
+                                            message.type === 'left' ? 'dark:bg-[#E9E9EB] bg-[#26252A]' : '',
+                                            message.type === 'right' ? 'bg-[#fff]' : ''
 
                                         )}
                                     />
