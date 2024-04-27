@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import { useEffect, useMemo, useRef, useState } from "react"
+import CaseStudyLinks from "../CaseStudyLinks"
 
 const PropConnectCaseStudy = () => {
 
@@ -44,6 +45,11 @@ const PropConnectCaseStudy = () => {
                         >
                             My friend (a property manager by trade) inspired me to build this tool that automates the back and forth between tenants and landlords that any property manager has to deal with. Using GPT-4 and Twilio, tenants can text in their maintenance requests and the system will categorize the issue, get all the critical details, and assign a vendor to fix the issue. From there, it puts the tenant and vendor in contact with each other directly. This bypasses the property manager for the most tedious work.
                         </div>
+
+                        <CaseStudyLinks
+                            githubLink='https://github.com/sw00d/PropConnect'
+                            projectLink='https://propconnect.io/'
+                        />
                     </div>
 
                     <PropConnectAnimation />
@@ -183,7 +189,6 @@ const PropConnectAnimation = () => {
                                             message.rows > 1 && i === message.rows - 1 ? 'w-[70%]' : '',
                                             message.type === 'left' ? 'dark:bg-[#E9E9EB] bg-[#26252A]' : '',
                                             message.type === 'right' ? 'bg-[#fff]' : ''
-
                                         )}
                                     />
                                 ))
