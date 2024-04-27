@@ -190,11 +190,11 @@ const LineChartAnimation = () => {
         const intervalId = setInterval(() => {
             requestAnimationFrame(animateLine);
         }, 3); // Call animateLine every 10ms
-
+        const ref = requestIdRef.current;
         return () => {
             clearInterval(intervalId); // Clean up on component unmount
-            if (requestIdRef.current) {
-                cancelAnimationFrame(requestIdRef.current);
+            if (ref) {
+                cancelAnimationFrame(ref);
             }
         };
     }, [animateLine]);

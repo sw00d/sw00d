@@ -1,13 +1,12 @@
 import Image from 'next/image';
 import githubLogo from '../../assets/github-mark.svg';
 import link from '../../assets/link.png';
-import { clsx } from 'clsx';
 import Tooltip from '../Tooltip';
 
 const CaseStudyLinks = ({
     githubLink,
     projectLink
-}) => {
+}: { githubLink: string, projectLink: string }) => {
     return (
         <div className='mt-8 flex align-center gap-4'>
             <Tooltip text="Github">

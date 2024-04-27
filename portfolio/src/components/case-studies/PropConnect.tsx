@@ -71,18 +71,19 @@ const PropConnectAnimation = () => {
     const [messagesInView, setMessagesInView] = useState<number[]>([]);
 
     useEffect(() => {
+        const ref = scrollRef.current
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) {
-                    scrollRef.current?.scrollTo(0, 0)
+                    ref?.scrollTo(0, 0)
                 }
             });
         });
 
-        observer.observe(scrollRef.current as Element);
+        observer.observe(ref as Element);
 
         return () => {
-            observer.unobserve(scrollRef.current as Element);
+            observer.unobserve(ref as Element);
         };
     }, [scrollRef]);
 
@@ -106,40 +107,42 @@ const PropConnectAnimation = () => {
             });
         });
 
+        const ref = messagesEndRef.current
         messages.forEach((_, i) => {
-            if (messagesEndRef.current[i]) {
-                observer.observe(messagesEndRef.current[i]);
+            if (ref[i]) {
+                observer.observe(ref[i]);
             }
         });
 
         return () => {
             messages.forEach((_, i) => {
-                if (messagesEndRef.current[i]) {
-                    observer.unobserve(messagesEndRef.current[i]);
+                if (ref[i]) {
+                    observer.unobserve(ref[i]);
                 }
             });
         };
     }, [messages]);
 
     const heightOfNextMessage = useMemo(() => {
+        const ref = messagesEndRef.current
         const nextMessage = messagesInView[messagesInView.length - 1] + 1
-        if (messagesEndRef.current[nextMessage]) {
-            return messagesEndRef.current[nextMessage].offsetHeight + 16 // 18 is the gap between messages
+        if (ref[nextMessage]) {
+            return ref[nextMessage].offsetHeight + 16 // 18 is the gap between messages
         } else {
             return 0
         }
     }, [messagesInView])
 
     useEffect(() => {
-
+        const ref = scrollRef.current
         const interval = setInterval(() => {
-            if (scrollRef.current) {
+            if (ref) {
                 if (messagesInView.length === messages.length) {
-                    scrollRef.current.style.scrollBehavior = 'auto'
-                    scrollRef.current.scrollTop = 8
+                    ref.style.scrollBehavior = 'auto'
+                    ref.scrollTop = 8
                 } else {
-                    scrollRef.current.style.scrollBehavior = 'smooth'
-                    scrollRef.current.scrollTop += heightOfNextMessage
+                    ref.style.scrollBehavior = 'smooth'
+                    ref.scrollTop += heightOfNextMessage
                 }
                 // }
             }
@@ -149,9 +152,10 @@ const PropConnectAnimation = () => {
     }, [messagesInView, heightOfNextMessage])
 
     useEffect(() => {
-        if (scrollRef.current) {
+        const ref = scrollRef.current
+        if (ref) {
             // initialize 6px from top
-            scrollRef.current.scrollTop += 6
+            ref.scrollTop += 6
         }
     }, [scrollRef.current])
 
@@ -159,7 +163,7 @@ const PropConnectAnimation = () => {
         <div
             ref={scrollRef}
             className={clsx(
-                'flex-1 md:h-[310px] max-h-[100%] overflow-hidden absolute w-full opacity-30 z-0',
+                'flex-1 md:h-[356px] max-h-[100%] overflow-hidden absolute w-full opacity-30 z-0',
                 'lg:opacity-100 lg:relative scroll-smooth'
             )}
         >

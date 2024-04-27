@@ -17,7 +17,7 @@
     "@types/react-dom": "18.0.10",
     "audit": "^0.0.6",
     "clsx": "^2.1.0",
-    "eslint": "8.33.0",
+    "eslint": "8.47.0",
     "eslint-config-next": "13.1.6",
     "framer-motion": "^11.0.8",
     "gsap": "^3.12.5",
@@ -26,7 +26,7 @@
     "react-dom": "18.2.0",
     "remove": "^0.1.5",
     "tsparticles": "^3.3.0",
-    "typescript": "4.9.5"
+    "typescript": "5.1.6"
   },
   "devDependencies": {
     "@headlessui/tailwindcss": "^0.1.3",
