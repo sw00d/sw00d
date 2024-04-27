@@ -5,6 +5,7 @@ import { useMemo, useState } from "react"
 import Particles from "@tsparticles/react";
 import { useTheme } from "@/context/themeContext";
 import CaseStudyLinks from "../CaseStudyLinks";
+import CaseStudyTech from "../CaseStudyTech";
 
 const PlaticaCaseStudy = () => {
     const [bubbleAnimated, setBubbleAnimated] = useState(false)
@@ -22,8 +23,9 @@ const PlaticaCaseStudy = () => {
         setTimeout(() => {
             setBubbleAnimated(false)
         }, duration);
-
     }
+
+
     return (
         <div
             className={clsx(
@@ -86,19 +88,28 @@ const PlaticaCaseStudy = () => {
                     </div>
                 </div>
 
+                <CaseStudyLinks
+                    githubLink='https://github.com/sw00d/translation-app'
+                    projectLink='https://www.platica.xyz/'
+                />
+
                 <div
                     className='mt-5 text-sm font-light'
                 >
                     Powered by GPT-4, Platica is a platform that enhances the communication by integrating real time communication into public chatrooms. While this MVP is still primitive, it showcases the utility of the technology and is used by everybody from ESL instructors, to lovers who don’t share a common tongue. We plan to make this project more robust in the near future, putting together a native app and expanding to our current site’s functionality.
                 </div>
 
-                <CaseStudyLinks
-                    githubLink='https://www.github.com/sw00d'
-                    projectLink='https://www.platica.xyz/'
-                />
+                <div className='mt-4'>
+                    <CaseStudyTech
+                        tech={[
+                            'vue',
+                            'flask',
+                        ]}
+                    />
+                </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import CaseStudyLinks from "../CaseStudyLinks";
+import CaseStudyTech from "../CaseStudyTech";
 
 const GitStreakTracker = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -189,16 +190,25 @@ const GitStreakTracker = () => {
                     </div>
                 </div>
 
+                <CaseStudyLinks
+                    githubLink='https://github.com/gibsonbailey/git-streak-tracker'
+                    projectLink='https://git-streak-tracker.herokuapp.com/'
+                />
+
                 <div
                     className='mt-3 md:mt-5 text-sm font-light'
                 >
                     Built with a buddy of mine, we used this as an exploratory Swift project which actually turned into a usefule tool that I use daily. This IOS app tracks your git contributions while also offering two different widgets that you can fix on your home screen as a reminder to make a contribution that day. It&apos;s a gamified way to make sure you code at least a little bit every day.
                 </div>
 
-                <CaseStudyLinks
-                    githubLink='https://github.com/gibsonbailey/git-streak-tracker'
-                    projectLink='https://git-streak-tracker.herokuapp.com/'
-                />
+                <div className='mt-4'>
+                    <CaseStudyTech
+                        tech={[
+                            'react',
+                            'swift',
+                        ]}
+                    />
+                </div>
             </div>
 
         </div>

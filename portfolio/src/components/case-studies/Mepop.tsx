@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import { useTheme } from "@/context/themeContext";
 import CaseStudyLinks from "../CaseStudyLinks";
+import CaseStudyTech from "../CaseStudyTech";
 
 const MepopCaseStudy = () => {
     useEffect(() => {
@@ -59,6 +60,10 @@ const MepopCaseStudy = () => {
                             Analytics for Depop Sellers
                         </div>
                     </div>
+                    <CaseStudyLinks
+                        githubLink='https://www.github.com/Mepop-Reports'
+                        projectLink='https://www.mepopreports.com/'
+                    />
 
                     <div
                         className='mt-5 text-sm font-light'
@@ -66,10 +71,15 @@ const MepopCaseStudy = () => {
                         Mepop revolutionizes sales tracking for Depop&apos;s 11 million users, offering an intuitive tool to analyze profits from CSV files, bypassing the lack of a Depop API. It provides personalized insights for you individual shop -- which items sells best, on which days, to which demographic. Born from personal need and market demand, it simplifies financial oversight for sellers. Created over 5 years ago, I&apos;m fully hands off of this project, and it still continues to serve its ever-growing userbase.
                     </div>
 
-                    <CaseStudyLinks
-                        githubLink='https://www.github.com/Mepop-Reports'
-                        projectLink='https://www.mepopreports.com/'
-                    />
+
+                    <div className='mt-4'>
+                        <CaseStudyTech
+                            tech={[
+                                'react',
+                                'firebase',
+                            ]}
+                        />
+                    </div>
 
                 </div>
 

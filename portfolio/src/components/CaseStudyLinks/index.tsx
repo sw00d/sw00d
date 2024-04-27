@@ -1,23 +1,26 @@
 import Image from 'next/image';
 import githubLogo from '../../assets/github-mark.svg';
 import link from '../../assets/link.png';
-import Tooltip from '../Tooltip';
 
 const CaseStudyLinks = ({
     githubLink,
     projectLink
 }: { githubLink: string, projectLink: string }) => {
+    const btnContainerClasses = 'flex gap-1 flex-row-reverse bg-highlight rounded-md text-xs items-center pr-1 pl-2 active:scale-90 transition text-black'
+
     return (
-        <div className='mt-8 flex align-center gap-4'>
-            <Tooltip text="Github">
-                <a
-                    className='flex items-center link-container'
-                    href={githubLink}
-                    target='_blank'
-                    rel='noreferrer noopener'
+        <div className='flex align-center gap-4'>
+            <a
+                className='flex items-center link-container'
+                href={githubLink}
+                target='_blank'
+                rel='noreferrer noopener'
+            >
+                <div
+                    className={btnContainerClasses}
                 >
                     <div
-                        className='w-9 h-9 bg-highlight p-1 rounded-lg active:scale-90 transition'
+                        className='w-6 h-6 bg-highlight p-1'
                     >
                         <Image
                             src={githubLogo}
@@ -25,19 +28,22 @@ const CaseStudyLinks = ({
                             className='w-full h-full pointer-events-none'
                         />
                     </div>
-                </a>
-            </Tooltip>
+                    Github
+                </div>
+            </a>
 
-            <Tooltip text="View Project">
-
-                <a
-                    className='flex items-center link-container'
-                    href={projectLink}
-                    target='_blank'
-                    rel='noreferrer noopener'
+            <a
+                className='flex items-center link-container'
+                href={projectLink}
+                target='_blank'
+                rel='noreferrer noopener'
+            >
+                <div
+                    className={btnContainerClasses}
                 >
+
                     <div
-                        className='w-9 h-9 bg-highlight p-1 rounded-lg active:scale-90 transition'
+                        className='w-6 h-6 bg-highlight p-1 rounded-lg active:scale-90 transition'
                     >
                         <Image
                             src={link}
@@ -45,10 +51,10 @@ const CaseStudyLinks = ({
                             className='w-full h-full scale-90 pointer-events-none'
                         />
                     </div>
+                    View Project
+                </div>
 
-                </a>
-
-            </Tooltip>
+            </a>
         </div>
     );
 }
