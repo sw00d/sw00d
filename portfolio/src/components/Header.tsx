@@ -63,17 +63,19 @@ const Header = () => {
                         'w-[100px] h-[100px] min-w-[100px] p-1',
                         'md:w-[200px] md:h-[200px] md:p-3',
                         'lg:w-[200px] lg:h-[200px] lg:p-3 flex relative overflow-hidden rounded-2xl justify-center items-center',
-                        'avatar-animation',
                     )}
                 >
-                    <Image
-                        src="/sam.png"
-                        alt="Sam's Pixel Avatar"
-                        width={300}
-                        priority
-                        height={300}
-                        className={clsx({ 'transform scale-x-[-1]': isMouseLeft })}
-                    />
+                    <div className='avatar-animation'>
+
+                        <Image
+                            src="/sam.png"
+                            alt="Sam's Pixel Avatar"
+                            width={300}
+                            priority
+                            height={300}
+                            className={clsx({ 'transform scale-x-[-1]': isMouseLeft })}
+                        />
+                    </div>
                 </motion.div>
 
                 <div className='pt-3'>
@@ -102,7 +104,7 @@ const Header = () => {
                             // scale down on click
                             className="transform hover:scale-110 active:scale-90 transition-transform duration-100"
                         >
-                            🌞
+                            ☀️
                         </button>
                         &nbsp; By day, I&apos;m the lead frontend developer at <a href="https://ckcollab.com/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400">CKC</a>
                     </h3>
