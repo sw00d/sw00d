@@ -1,16 +1,20 @@
 <h1 align="center">Samuel Wood</h1>
 
 <p align="center">
-  <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=26&duration=10000&pause=2200&color=D0D0D0&center=true&vCenter=true&repeat=true&width=1000&height=80&lines=Software+Developer" alt="Typing SVG" />
-  </a>
 </p>
 
-<h3>Hi there 👋</h3>
+<h3>
+  Hi there 👋
+  <a href="https://sams-portoflio.vercel.app/">
+  https://sams-portoflio.vercel.app/
+  </a>
+    
+</h3>
 
 <h3>🌞 &nbsp; By day, I'm the lead frontend developer at <a href="https://ckcollab.com/">CKC</a> 👈🏻 (oh I built this)</h3>
 <h3>🌙 &nbsp; By night, I love taking things from an idea to a real-life application</h3>
-
+<h3></h3> Check out my 
 
 <br><br><br>
 
