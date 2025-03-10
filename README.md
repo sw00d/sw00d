@@ -12,7 +12,7 @@
   </a>
 </p>
 
-<h3>🌞 &nbsp; By day, I'm the lead frontend developer at <a href="https://ckcollab.com/">CKC</a> 👈🏻 (oh I built this)</h3>
+<h3>🌞 &nbsp; By day, I'm an engineer at <a href="https://reshop.com/">Reshop</a></h3>
 <h3>🌙 &nbsp; By night, I love taking things from an idea to a real-life application</h3>
 
 <br><br><br>
