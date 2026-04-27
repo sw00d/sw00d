@@ -1,21 +1,17 @@
-<h1 align="center">Samuel Wood</h1>
+<!-- <h1 align="center">Samuel Wood</h1> -->
 
-<p align="center">
-    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=26&duration=10000&pause=2200&color=D0D0D0&center=true&vCenter=true&repeat=true&width=1000&height=80&lines=Software+Developer" alt="Typing SVG" />
-</p>
-
-<h3>
-  Hi there 👋
-</h3>
-<p> 👉🏼 <a href="https://sams-portoflio.vercel.app/">
+<h1>
+  Hi I'm Sam 👋
+</h1>
+<!-- <p> 👉🏼 <a href="https://sams-portoflio.vercel.app/">
   https://sams-portoflio.vercel.app/
   </a>
-</p>
+</p> -->
 
 <h3>🌞 &nbsp; By day, I'm an engineer at <a href="https://reshop.com/">Reshop</a></h3>
-<h3>🌙 &nbsp; By night, I love taking things from an idea to a real-life application</h3>
+<h3>🌙 &nbsp; By night, I like telling AI to build me things</h3>
 
-<br><br><br>
+<!-- <br><br><br>
 
 <h2>Some Personal Projects:</h2>
 
@@ -60,4 +56,4 @@
 
 <a href="https://git-streak-tracker.herokuapp.com/">Cool web demo</a> (not mobile responsive 📵)<br>
 <a href="https://github.com/gibsonbailey/git-streak-tracker">View the Repository on GitHub</a><br>
-<a href="https://apps.apple.com/us/app/git-streak-tracker/id1663708723">Download the iOS App</a>
+<a href="https://apps.apple.com/us/app/git-streak-tracker/id1663708723">Download the iOS App</a> -->
